@@ -6,8 +6,8 @@ from dotenv import load_dotenv
 from .config import Config
 from .services.poi_init import initialize_collection
 
-load_dotenv()
-initialize_collection()
+# load_dotenv()
+# initialize_collection()
 
 if os.environ.get('CACHE_MODE') == 'simple':
     CACHE_TYPE = 'SimpleCache'

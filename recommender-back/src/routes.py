@@ -5,7 +5,7 @@ from .app import app, cache
 from .apis.aqi import AQI
 from .apis.forecast import Forecast
 from .apis.current import Current
-from .apis.pathing import GreenPathsAPI
+from .apis.pathing import GreenPathsAPI, GraphhopperAPI
 from .apis import manager
 from .services.data_fetcher import DataFetcher
 
@@ -127,7 +127,8 @@ def get_path():
     except ValueError:
         return jsonify({"error": "Invalid coordinates"}), 400
 
-    green_paths = GreenPathsAPI(start_coords, end_coords)
+    # green_paths = GreenPathsAPI(start_coords, end_coords)
+    green_paths = GraphhopperAPI(start_coords, end_coords)
     if route_coordinates := green_paths.route_coordinates:
         coords = [[coord[1], coord[0]] for coord in route_coordinates]
         return json.dumps(coords)
