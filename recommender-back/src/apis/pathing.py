@@ -85,7 +85,9 @@ class GraphhopperAPI:
         starting_point = (self.start_coords[1], self.start_coords[0])
         destination = (self.end_coords[1], self.end_coords[0])
         profile = "foot"
-        url = f"http://localhost:8989/route"
+        # url = f"http://localhost:8989/route"
+        # When using Docker compose
+        url = f"http://graphhopper:8989/route"
         payload = {
             "points": [starting_point, destination],
             "profile": profile,

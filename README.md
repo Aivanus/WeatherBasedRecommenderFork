@@ -18,6 +18,12 @@ This application is being created as part of the software [engineering course](h
 
 ## Instructions
 
+### New
+
+First you have to clone the greener-paths repository after which run `docker compose build` in that directory. After this run the following.
+
+**NOTICE**: The app is non functional, and the only working part in the backend is path generation using Graphhopper.
+
 ```bash
 # Give permissions for a script to specify the backend URL
 $ chmod +x generate_local_env.sh
@@ -28,6 +34,8 @@ $ ./generate_local_env.sh '...'
 # Start the frontend and backend services on ports 5000 and 3000, respectively
 $ docker compose up
 ```
+
+**Testing**: You can test path generation with e.g., `http://localhost:5000/api/path?start=60.172808,24.909591&end=60.204516,24.962033` in your browser.
 
 To get the MongoDB development URL, read more [here](/docs/database.md). To run the frontend and backend services individually, refer to the instructions provided in the [frontend](/recommender-front/README.md) and [backend](/recommender-back/README.md) README's respectively.
 

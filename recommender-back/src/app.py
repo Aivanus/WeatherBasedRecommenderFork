@@ -4,7 +4,7 @@ from flask_caching import Cache
 from flask_cors import CORS
 from dotenv import load_dotenv
 from .config import Config
-from .services.poi_init import initialize_collection
+# from .services.poi_init import initialize_collection
 
 # load_dotenv()
 # initialize_collection()
